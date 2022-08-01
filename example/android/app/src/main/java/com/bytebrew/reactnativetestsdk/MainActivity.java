@@ -1,4 +1,4 @@
-package com.example.reactnativebytebrewsdk;
+package com.bytebrew.reactnativetestsdk;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

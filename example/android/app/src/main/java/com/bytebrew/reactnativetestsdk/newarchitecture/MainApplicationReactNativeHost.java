@@ -1,4 +1,4 @@
-package com.example.reactnativebytebrewsdk.newarchitecture;
+package com.bytebrew.reactnativetestsdk.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.example.reactnativebytebrewsdk.BuildConfig;
-import com.example.reactnativebytebrewsdk.newarchitecture.components.MainComponentsRegistry;
-import com.example.reactnativebytebrewsdk.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.bytebrew.reactnativetestsdk.BuildConfig;
+import com.bytebrew.reactnativetestsdk.newarchitecture.components.MainComponentsRegistry;
+import com.bytebrew.reactnativetestsdk.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

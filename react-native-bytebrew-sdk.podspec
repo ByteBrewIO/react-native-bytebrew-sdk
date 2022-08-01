@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ByteBrewIO/react-native-bytebrew-sdk.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm}"
+  s.vendored_framework = "ios/ByteBrew.xcframework"
 
   s.dependency "React-Core"
 

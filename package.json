@@ -1,7 +1,7 @@
 {
   "name": "react-native-bytebrew-sdk",
-  "version": "0.1.0",
-  "description": "test",
+  "version": "0.0.9",
+  "description": "Official ByteBrew React Native SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -33,7 +33,15 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "bytebrew",
+    "analytics",
+    "monetization",
+    "push",
+    "notifications",
+    "remote",
+    "configs",
+    "attribution"
   ],
   "repository": "https://github.com/ByteBrewIO/react-native-bytebrew-sdk",
   "author": "ByteBrew <contact@bytebrew.io> (https://github.com/ByteBrewIO)",

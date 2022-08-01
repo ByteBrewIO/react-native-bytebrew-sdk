@@ -1,5 +1,8 @@
 # react-native-bytebrew-sdk
-ByteBrew React Native SDK for Android and iOS platforms
+ByteBrew React Native SDK for Android and iOS platforms.
+
+ByteBrew is the free easy to integrate React Native SDK that provides your app/game with Real-Time Analytic Tracking, Monetization Tracking, Attribution, Remote Configs and A/B Testing.
+
 ## Installation
 
 ```sh
@@ -9,21 +12,32 @@ npm install react-native-bytebrew-sdk
 ## Usage
 
 ```js
-import { multiply } from "react-native-bytebrew-sdk";
+import ByteBrew from 'react-native-bytebrew-sdk';
 
 // ...
 
-const result = await multiply(3, 7);
+// Initialize the ByteBrew SDK
+if(Platform.OS == "android") {
+    ByteBrew.Initialize("ANDROID_APP_ID", "ANDROID_SDK_KEY");
+} else if(Platform.OS == "ios") {
+    ByteBrew.Initialize("IOS_APP_ID", "IOS_SDK_KEY");
+}
 ```
 
-## Contributing
+## More Documentation
+### Checkout our ByteBrew developer docs [React-Native-Docs](https://docs.bytebrew.io/sdk/react-native)
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+## Getting Started With ByteBrew
+
+[ByteBrew Dashboard](https://dashboard.bytebrew.io): Setup your mobile games and view your real-time analytics.
+
+Create your ByteBrew account to access the [dashboard](https://dashboard.bytebrew.io/register), or if you do have an account login [here](https://dashboard.bytebrew.io/login).
+
+## Community
+Join our Community of Developers on Discord [here](https://discord.gg/sAp4f3tJte)!
 
 ## License
 
 MIT
 
 ---
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)

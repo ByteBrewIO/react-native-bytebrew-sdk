@@ -53,7 +53,7 @@ yarn test
 ```
 To edit the Objective-C files, open `example/ios/BytebrewSdkExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-bytebrew-sdk`.
 
-To edit the Kotlin files, open `example/android` in Android studio and find the source files at `reactnativebytebrewsdk` under `Android`.
+To edit the Kotlin files, open `example/android` in Android studio and find the source files at `reactnativetestsdk` under `Android`.
 ### Commit message convention
 
 We follow the [conventional commits specification](https://www.conventionalcommits.org/en) for our commit messages:
