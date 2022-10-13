@@ -40,6 +40,12 @@ public class BytebrewSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void IsByteBrewInitialized(Promise promise)
+    {
+      promise.resolve(ByteBrew.IsByteBrewInitialized());
+    }
+
+    @ReactMethod
     public void StartPushNotifications()
     {
       ByteBrew.StartPushNotifications(context);

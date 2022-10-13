@@ -35,15 +35,19 @@ const HomeScreen = () => {
             />
             <Button
                 title="Get Configs"
-                onPress={() =>
-                ByteBrew.LoadRemoteConfigs().then(value => {
-                  if(value) {
-                    ByteBrew.RetrieveRemoteConfigValue("test_key", "Nothing").then(config => {
-                      setConfigs(config);
-                    })
-                  }
-                })
-                }
+                onPress={() => {
+                  ByteBrew.IsByteBrewInitialized().then((sec) => {
+                      console.log("ByteBrew Initialized Second: ", sec);
+                  });
+
+                  ByteBrew.LoadRemoteConfigs().then(value => {
+                    if(value) {
+                      ByteBrew.RetrieveRemoteConfigValue("test_key", "Nothing").then(config => {
+                        setConfigs(config);
+                      })
+                    }
+                  });
+                }}
             />
         </View>
     );

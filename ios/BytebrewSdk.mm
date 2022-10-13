@@ -1,5 +1,5 @@
 #import "BytebrewSdk.h"
-#import "ByteBrewNativeiOSPlugin/ByteBrewNativeiOSPlugin.h"
+#import <ByteBrewNativeiOSPlugin/ByteBrewNativeiOSPlugin.h>
 #ifdef RCT_NEW_ARCH_ENABLED
 #import "RNBytebrewSdkSpec.h"
 #endif
@@ -16,6 +16,12 @@ RCT_EXPORT_METHOD(Initialize: (NSString *)appID appKey:(NSString *) appKey engin
 {
     [ByteBrewNativeiOSPlugin InitializeWithSettings:appID SecretKey:appKey EngineVersion:engineVersion BuildVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     self.initializationCalled = YES;
+}
+
+RCT_EXPORT_METHOD(IsByteBrewInitialized: (RCTPromiseResolveBlock)resolve
+                  withRejecter:(RCTPromiseRejectBlock)reject)
+{
+    resolve([NSNumber numberWithBool:[ByteBrewNativeiOSPlugin IsByteBrewInitialized]]);
 }
 
 RCT_EXPORT_METHOD(StartPushNotifications)

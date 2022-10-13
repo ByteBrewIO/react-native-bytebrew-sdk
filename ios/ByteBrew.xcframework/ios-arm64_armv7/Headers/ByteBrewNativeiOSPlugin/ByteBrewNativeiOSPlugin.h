@@ -19,6 +19,7 @@ typedef enum {
 
 @interface ByteBrewNativeiOSPlugin : NSObject
 +(void)InitializeWithSettings:(NSString*) gameID SecretKey:(NSString*) secretKey EngineVersion:(NSString*) engineV BuildVersion:(NSString*) buildV;
++(BOOL) IsByteBrewInitialized;
 +(void)StartPushNotification;
 +(void)StartPushNotification:(NSDictionary*) launchOptions;
 +(void) LowLevelPushStart;

@@ -15,13 +15,21 @@ const BytebrewSdk = NativeModules.BytebrewSdk  ? NativeModules.BytebrewSdk  : ne
       }
     );
 
-const SDKVERSION = "0.0.9";
+const SDKVERSION = "0.1.0";
 
 /**
  * Initialize ByteBrew with your App/Game ID and SDK Key
  */
 const Initialize = (appID: string, appKey: string) => {
   BytebrewSdk.Initialize(appID, appKey, `REACT_NATIVE@${SDKVERSION}`);
+}
+
+/**
+ * Check if the SDK is initialized
+ * @returns Boolean saying if the SDK is done initializing
+ */
+ const IsByteBrewInitialized = (): Promise<boolean> => {
+  return BytebrewSdk.IsByteBrewInitialized();
 }
 
 /**
@@ -241,6 +249,7 @@ const RestartTracking = () => {
 
 export default {
   Initialize,
+  IsByteBrewInitialized,
   StartPushNotifications,
   NewCustomEvent,
   NewProgressionEvent,
