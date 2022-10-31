@@ -8,11 +8,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const HomeScreen = () => {
     const [result, setResult] = React.useState<string | undefined>();
     const [configs, setConfigs] = React.useState<string | undefined>();
+    const [abtest, setABTest] = React.useState<string | undefined>();
 
     return (
         <View style={styles.container}>
             <Text>User: {result}</Text>
             <Text>Configs: {configs || "N/A"}</Text>
+            <Text>A/B Test: {abtest || "N/A"}</Text>
             <Button title='Press me' onPress={() => ByteBrew.NewCustomEvent("press_me_bt")}></Button>
             <Button title='Press custom event string' onPress={() => ByteBrew.NewCustomEvent("clicked_product", "clock_1235")}></Button>
             <Button title='Press custom event' onPress={() => ByteBrew.NewCustomEvent("collected", 32)}></Button>
@@ -44,7 +46,10 @@ const HomeScreen = () => {
                     if(value) {
                       ByteBrew.RetrieveRemoteConfigValue("test_key", "Nothing").then(config => {
                         setConfigs(config);
-                      })
+                      });
+                      ByteBrew.RetrieveRemoteConfigValue("test-item", "Nothing").then(config => {
+                        setABTest(config);
+                      });
                     }
                   });
                 }}
