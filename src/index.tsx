@@ -15,7 +15,7 @@ const BytebrewSdk = NativeModules.BytebrewSdk  ? NativeModules.BytebrewSdk  : ne
       }
     );
 
-const SDKVERSION = "0.1.1";
+const SDKVERSION = "0.1.2";
 
 /**
  * Initialize ByteBrew with your App/Game ID and SDK Key
