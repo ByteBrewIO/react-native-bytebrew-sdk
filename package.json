@@ -1,6 +1,6 @@
 {
   "name": "react-native-bytebrew-sdk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Official ByteBrew React Native SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

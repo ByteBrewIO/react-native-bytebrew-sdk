@@ -1,3 +1,9 @@
+## 0.1.3
+
+* 0.1.3 ByteBrew React Native SDK Release
+* Minor Android & iOS updates
+* Update for Apple Search Ads, and Google Ads Attribution.
+
 ## 0.1.2
 
 * 0.1.2 ByteBrew React Native SDK Release
