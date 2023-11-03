@@ -130,6 +130,18 @@ public class BytebrewSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void TrackAdEventWithRevenue(int adType, String adProvider, String adUnitName, double revenue)
+    {
+      ByteBrew.TrackAdEvent(ByteBrewAdType.values()[adType], adProvider, adUnitName, revenue);
+    }
+
+    @ReactMethod
+    public void TrackAdEventWithAdLocationRevenue(int adType, String adProvider, String adUnitName, String adLocation, double revenue)
+    {
+      ByteBrew.TrackAdEvent(ByteBrewAdType.values()[adType], adProvider, adUnitName, adLocation, revenue);
+    }
+
+    @ReactMethod
     public void TrackInAppPurchase(String store, String currency, double amount, String itemID, String category)
     {
       ByteBrew.TrackInAppPurchaseEvent(store, currency, (float)amount, itemID, category);

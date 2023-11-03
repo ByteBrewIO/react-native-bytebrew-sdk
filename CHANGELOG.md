@@ -1,3 +1,10 @@
+## 0.1.4
+
+* 0.1.4 ByteBrew React Native SDK Release
+* Minor Android & iOS updates
+* Update for Google Ads Attribution.
+* Added a new revenue parameter for track ad event.
+
 ## 0.1.3
 
 * 0.1.3 ByteBrew React Native SDK Release

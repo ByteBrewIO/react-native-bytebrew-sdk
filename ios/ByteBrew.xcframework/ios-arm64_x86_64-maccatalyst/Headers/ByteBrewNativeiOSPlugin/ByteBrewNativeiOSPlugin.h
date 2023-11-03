@@ -36,6 +36,8 @@ typedef enum {
 +(void) NewTrackedAdEvent:(NSString*) placementType AdLocation:(NSString*) adLoaction;
 +(void) NewTrackedAdEvent:(NSString*) placementType AdLocation:(NSString*) adLocation AdID:(NSString*) adID;
 +(void) NewTrackedAdEvent:(NSString*) placementType AdLocation:(NSString*) adLocation AdID:(NSString*) adID AdProvider:(NSString*) adProvider;
++(void) NewTrackedAdEvent:(NSString*) placementType AdProvider:(NSString*) adProvider AdUnitName:(NSString*) adUnitName Revenue:(double)revenue;
++(void) NewTrackedAdEvent:(NSString*) placementType AdProvider:(NSString*) adProvider AdUnitName:(NSString*) adUnitName AdLocation:(NSString*) adLocation Revenue:(double)revenue;
 +(void) AddTrackedInAppPurchaseEvent:(NSString*) store Currency:(NSString*) currency Amount:(Float64) amount ItemID:(NSString*) itemID Category:(NSString*) category;
 +(void) AddTrackediOSInAppPurchaseEvent:(NSString*) store Currency:(NSString*) currency Amount:(Float64) amount ItemID:(NSString*) itemID Category:(NSString*) category Receipt:(NSString*) receipt;
 typedef void (^FinishedValidation)(NSMutableDictionary* purchaseResult);

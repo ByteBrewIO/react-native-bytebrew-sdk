@@ -191,6 +191,44 @@ RCT_EXPORT_METHOD(TrackAdEventWithAdProvider: (int) adType adLocation:(NSString 
     [ByteBrewNativeiOSPlugin NewTrackedAdEvent:adTypeSTR AdLocation:adLocation AdID:adID AdProvider:adProvider];
 }
 
+RCT_EXPORT_METHOD(TrackAdEventWithRevenue: (int) adType adProvider:(NSString*) adProvider adUnitName:(NSString*) adUnitName revenue:(double) revenue)
+{
+    if(![self initializationCalled]) {
+        NSLog(@"ByteBrew: Must call initialization first before anything else.");
+        return;
+    }
+    
+    NSString* adTypeSTR = @"";
+    if(adType == 0) {
+        adTypeSTR = @"Interstitial";
+    } else if(adType == 1) {
+        adTypeSTR = @"Reward";
+    } else if(adType == 2) {
+        adTypeSTR = @"Banner";
+    }
+    
+    [ByteBrewNativeiOSPlugin NewTrackedAdEvent:adTypeSTR AdProvider:adProvider AdUnitName:adUnitName Revenue:revenue];
+}
+
+RCT_EXPORT_METHOD(TrackAdEventWithAdLocationRevenue: (int) adType adProvider:(NSString*) adProvider adUnitName:(NSString*) adUnitName adLocation:(NSString*) adLocation revenue:(double) revenue)
+{
+    if(![self initializationCalled]) {
+        NSLog(@"ByteBrew: Must call initialization first before anything else.");
+        return;
+    }
+    
+    NSString* adTypeSTR = @"";
+    if(adType == 0) {
+        adTypeSTR = @"Interstitial";
+    } else if(adType == 1) {
+        adTypeSTR = @"Reward";
+    } else if(adType == 2) {
+        adTypeSTR = @"Banner";
+    }
+    
+    [ByteBrewNativeiOSPlugin NewTrackedAdEvent:adTypeSTR AdProvider:adProvider AdUnitName:adUnitName AdLocation:adLocation Revenue:revenue];
+}
+
 RCT_EXPORT_METHOD(TrackInAppPurchase: (NSString *) store currency:(NSString *) currency amount:(nonnull NSNumber *) amount itemID:(NSString *) itemID category:(NSString *) category)
 {
     if(![self initializationCalled]) {

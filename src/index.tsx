@@ -15,7 +15,7 @@ const BytebrewSdk = NativeModules.BytebrewSdk  ? NativeModules.BytebrewSdk  : ne
       }
     );
 
-const SDKVERSION = "0.1.3";
+const SDKVERSION = "0.1.4";
 
 /**
  * Initialize ByteBrew with your App/Game ID and SDK Key
@@ -118,6 +118,28 @@ const TrackAdEvent = (adType: 'Interstitial' | 'Reward' | 'Banner', adLocation: 
     }
   } else {
     BytebrewSdk.TrackAdEvent(indexType, adLocation);
+  }
+}
+
+/**
+ * Track a Ad Event that happens in your app/game and record the revenue
+ * @param adType The type of ad "Interstitial", "Reward", "Banner"
+ * @param adProvider The provider or ad network that showed the ad
+ * @param adUnitName The possible name or id of the ad unit
+ * @param revenue The revenue earned from the impression
+ * @param adLocation Optional: The location in your app/game the ad occurred
+ * @returns 
+ */
+const TrackAdEventRevenue = (adType: 'Interstitial' | 'Reward' | 'Banner', adProvider: string, adUnitName: string, revenue: number, adLocation?: string) => {
+  var indexType = (adType == "Interstitial") ? 0 : (adType == "Reward") ? 1 : (adType == "Banner") ? 2 : -1;
+  if(indexType == -1) {
+    return;
+  }
+
+  if(adLocation) {
+    BytebrewSdk.TrackAdEventWithAdLocationRevenue(indexType, adProvider, adUnitName, adLocation, revenue);
+  } else {
+    BytebrewSdk.TrackAdEventWithRevenue(indexType, adProvider, adUnitName, revenue);
   }
 }
 
@@ -255,6 +277,7 @@ export default {
   NewProgressionEvent,
   SetCustomDataAttribute,
   TrackAdEvent,
+  TrackAdEventRevenue,
   TrackInAppPurchase,
   TrackAppleInAppPurchase,
   TrackGoogleInAppPurchase,
