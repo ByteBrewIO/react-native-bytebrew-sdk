@@ -1,3 +1,9 @@
+## 0.1.5
+
+* 0.1.5 ByteBrew React Native SDK Release
+* Minor iOS updates
+* Update for Apple Privacy Manifest.
+
 ## 0.1.4
 
 * 0.1.4 ByteBrew React Native SDK Release
